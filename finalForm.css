@@ -1,0 +1,17 @@
+/* lab11 css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    color:black;
+    border-color:black;
+    margin-left:50px;
+    
+}
+
+form {
+    color: black;
+    border-color:black;
+}
+
+
+

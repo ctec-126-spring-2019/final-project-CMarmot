@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="finalForm.css">
+    <title>Lab 11</title>
+</head>
+
+<h1>We need some info!</h1>
+<div class="errors"></div>
+
+<form id="data" action="http://ctec.clark.edu/~belgort/formprocessing/processform.php" method="post">
+    <!-- Get First Name -->
+    <label for="firstname">First name
+        <br>
+        <input type="text" name="firstname" id="firstname" placeholder="Enter first name">
+    </label>
+    <br><br>
+    <!-- Get Last Name -->
+    <label for="lastname">Last name
+        <br>
+        <input type="text" name="lastname" id="lastname" placeholder="Enter last name">
+    </label>
+   
+    <br><br>
+    <!-- Get the color -->
+    <label for="color">Select a Color</label>
+    <br>
+    <select name="state" id="color">
+        <option disabled selected value="sel" id="sel">--Select a Color--</option>
+        <option value="blue" id="blue">Blue</option>
+        <option value="green" id="green">Green</option>
+        <option value="red" id="red">Red</option>
+        <option value="pink" id="pink">Pink</option>
+    </select>
+    <br><br>
+    <!-- Get Emotion -->
+    <label for="emotion">Select a Feeling</label>
+    <br>
+    <select name="emotion" id="emotion">
+        <option disabled selected="selected">--Select a Feeling--</option>
+        <option value="emo">Emotional</option>
+        <option value="punk">Grouchy</option>
+        <option value="rock">Happy</option>
+        <option value="alt">Confused</option>
+    </select>
+    <br><br>
+
+    <!-- Radio buttons for yes/no  -->
+
+
+    <label id="groan">Do you promise not to groan? </label>
+    <br>
+    <label for="yes">Yes</label>
+    <input type="radio" name="groan" id="yes" value="Yes"><br>
+    <label for="no">No</label>
+    <input type="radio" name="groan" id="no" value="No"><br>
+
+
+    <br>
+
+
+
+    <input type="submit" value="Submit">
+
+    </div>
+</form>
+
+<div class="errors"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    // checks for document fully loaded
+    $(document).ready(function () {
+        // binds submit button to this event
+        $('#data').on('submit', function (evt) {
+            console.log(evt);
+            // empty array to hold errors
+            var errors = [];
+            // used for error checking
+            var flag = false;
+            // first name error catching
+            if ($('#firstname').val() === '') {
+                $('#firstname').css('border', '3px solid red');
+                $('#err1').remove();
+                $('#firstname').after('<span id="err1"> Please fill me in</span>');
+                // $('#firstname').focus();
+                flag = true;
+                // pushes error array onto errors
+                errors.push(['firstname', 'Please fill in your first name']);
+            }
+            else {
+                $('#err1').remove();
+            }
+            // last name error catching
+            if ($('#lastname').val() === '') {
+                $('#lastname').css('border', '3px solid red');
+                $('#err2').remove();
+                $('#lastname').after('<span id="err2"> Please fill me in</span>');
+                flag = true;
+                errors.push(['lastname', 'Please fill in your last name']);
+            } else {
+                $('#err2').remove();
+            }
+
+
+            // State error catching
+            if ($('#color').val() == null) {
+                $('#color').css('color', ' red');
+                $('#err5').remove();
+                $('#color').after('<span id="err5"> Please select a color</span>');
+                flag = true;
+                errors.push(['color', 'Please select a color']);
+            }
+            else {
+                $('#color').css('color', ' black');
+                $('#err5').remove();
+
+            }
+
+            // product error catching
+            if ($('#emotion').val() == null) {
+                $('#emotion').css('color', ' red');
+                $('#err6').remove();
+                $('#emotion').after('<span id="err6"> Please select an emotion</span>');
+                flag = true;
+                errors.push(['emotion', 'Please select an emotion']);
+            }
+            else {
+                $('#emotion').css('color', ' black');
+                $('#err6').remove();
+            }
+
+
+            // radio button error catching
+
+            if (document.getElementById('yes').checked) {
+                $('#groan').css('color', ' black');
+                $('#err8').remove();
+            } else if (document.getElementById('no').checked) {
+                $('#groan').css('color', ' black');
+                $('#err8').remove();
+            } else {
+                $('#groan').css('color', ' red');
+                $('#err8').remove();
+                $('#groan').after('<span id="err8"> Please select Yes or No');
+                flag = true;
+                errors.push(['groan', 'Please select Yes or No']);
+            }
+
+
+
+            // error bucket and form submission prevent
+            if (flag) {
+                var errorBucket = $('.errors');
+                var output = '<ul>';
+                for (let index = 0; index < errors.length; index++) {
+                    output += '<li>' + errors[index][1] + '</li>';
+                }
+                output += '</ul>';
+                errorBucket.html(output);
+                // stops form from being submitted
+                evt.preventDefault();
+                // puts the currsor in first unfilled input
+                $('#' + errors[0][0]).focus();
+            }
+
+        });
+
+        // binds an event to the firstname field for blur/tab
+        $('#firstname').on('blur', function () {
+            if ($(this).val().length > 0) {
+                $(this).css('border', '1px solid black');
+            } else {
+                $(this).css('border', '3px solid red');
+            }
+        });
+
+        $('#lastname').on('blur', function () {
+            if ($(this).val().length > 0) {
+                $(this).css('border', '1px solid black');
+            } else {
+                $(this).css('border', '3px solid red');
+            }
+        });
+
+
+        $('#address').on('blur', function () {
+            if ($(this).val().length > 0) {
+                $(this).css('border', '1px solid black');
+            } else {
+                $(this).css('border', '3px solid red');
+            }
+        });
+
+        $('#city').on('blur', function () {
+            if ($(this).val().length > 0) {
+                $(this).css('border', '1px solid black');
+            } else {
+                $(this).css('border', '3px solid red');
+            }
+        });
+
+        $('#state').on('blur', function () {
+            if ($(this).val() == null) {
+                $(this).css('text', '1px solid black');
+            } else {
+                $(this).css('text', '3px solid red');
+            }
+        });
+
+        $('#product').on('blur', function () {
+            if ($(this).val() == null) {
+                $(this).css('text', '1px solid black');
+            } else {
+                $(this).css('text', '3px solid red');
+            }
+        });
+
+        // I don't know how to get focus on the radio buttons or the check box areas... Sadness
+
+        // $('#firstname').on('keypress', function () {
+        //     console.log('type...');
+        // });
+
+    });
+</script>
+</body>
+
+</html>
