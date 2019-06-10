@@ -2,30 +2,6 @@
 
 
 // Using this to create the lightbox which will be repurposed
-function displayQuestion1() {
-    console.log('featured students')
-
-    // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
-    var featuredStudent = document.getElementById('question1');
-
-    // This is the arrays for featuredStudents. Note that you are to use. Note that it is an array of arrays.
-    var featuredStudents = [
-        ['Moody Blues'],
-        ['John Bonham'  ],
-        ['Dave Matthews'],
-        ['Alice Cooper']
-    ];
-
-    // Use this variable to build the output string that you will then use for the featured student info
-    var random = Math.floor(Math.random() * featuredStudents.length);
-
-    // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
-    var randomStudent = ['img/moodyDays.jpg', 'img/moodyChord.jpg', 'img/moodyEvery.jpg', 'img/moodyBalance.jpg'];
-
-    // Add the output to the featuredStudent element
-    q1.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
-}
-
 function displayQuestion2() {
     console.log('featured students')
 
@@ -44,10 +20,34 @@ function displayQuestion2() {
     var random = Math.floor(Math.random() * featuredStudents.length);
 
     // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
-    var randomStudent = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
+    var randomStudent = ['img/bluesAmerica.jpg', 'img/bluesDefinitive.jpg', 'img/bluesSoul.jpg', 'img/bluesSoundtrack.jpg'];
 
     // Add the output to the featuredStudent element
     q2.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+}
+
+function displayQuestion1() {
+    console.log('featured students')
+
+    // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
+    var featuredStudent = document.getElementById('question1');
+
+    // This is the arrays for featuredStudents. Note that you are to use. Note that it is an array of arrays.
+    var featuredStudents = [
+        ['Moody Blues'],
+        ['John Bonham'  ],
+        ['Dave Matthews'],
+        ['Alice Cooper']
+    ];
+
+    // Use this variable to build the output string that you will then use for the featured student info
+    var random = Math.floor(Math.random() * featuredStudents.length);
+
+    // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
+    var randomStudent = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
+
+    // Add the output to the featuredStudent element
+    q1.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
 }
 
 function displayQuestion3() {
