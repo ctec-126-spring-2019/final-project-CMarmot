@@ -1,33 +1,9 @@
 // script.js
 
 
-// Using this to create the lightbox which will be repurposed
-function displayQuestion2() {
-    console.log('featured students')
-
-    // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
-    var featuredStudent = document.getElementById('question2');
-
-    // This is the arrays for featuredStudents. Note that you are to use. Note that it is an array of arrays.
-    var featuredStudents = [
-        ['Moody Blues'],
-        ['John Bonham'  ],
-        ['Dave Matthews'],
-        ['Alice Cooper']
-    ];
-
-    // Use this variable to build the output string that you will then use for the featured student info
-    var random = Math.floor(Math.random() * featuredStudents.length);
-
-    // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
-    var randomStudent = ['img/bluesAmerica.jpg', 'img/bluesDefinitive.jpg', 'img/bluesSoul.jpg', 'img/bluesSoundtrack.jpg'];
-
-    // Add the output to the featuredStudent element
-    q2.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
-}
-
+// Switch to lightbox when question is correct Q1
 function displayQuestion1() {
-    console.log('featured students')
+    
 
     // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
     var featuredStudent = document.getElementById('question1');
@@ -40,23 +16,21 @@ function displayQuestion1() {
         ['Alice Cooper']
     ];
 
-    // Use this variable to build the output string that you will then use for the featured student info
+    
     var random = Math.floor(Math.random() * featuredStudents.length);
 
-    // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
     var randomStudent = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
 
-    // Add the output to the featuredStudent element
     q1.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
 }
 
-function displayQuestion3() {
-    console.log('featured students')
+// Switch to lightbox when question is correct Q2
+function displayQuestion2() {
+ 
 
-    // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
-    var featuredStudent = document.getElementById('question3');
 
-    // This is the arrays for featuredStudents. Note that you are to use. Note that it is an array of arrays.
+    var featuredStudent = document.getElementById('question2');
+    
     var featuredStudents = [
         ['Moody Blues'],
         ['John Bonham'  ],
@@ -64,37 +38,51 @@ function displayQuestion3() {
         ['Alice Cooper']
     ];
 
-    // Use this variable to build the output string that you will then use for the featured student info
+    var random = Math.floor(Math.random() * featuredStudents.length);
+    
+    var randomStudent = ['img/bluesAmerica.jpg', 'img/bluesDefinitive.jpg', 'img/bluesSoul.jpg', 'img/bluesSoundtrack.jpg'];
+
+    q2.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+}
+
+
+// Switch to lightbox when question is correct Q3
+function displayQuestion3() {
+    
+
+    var featuredStudent = document.getElementById('question3');
+
+  
+    var featuredStudents = [
+        ['Moody Blues'],
+        ['John Bonham'  ],
+        ['Dave Matthews'],
+        ['Alice Cooper']
+    ];
+    
     var random = Math.floor(Math.random() * featuredStudents.length);
 
-    // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
     var randomStudent = ['img/moodyDays.jpg', 'img/moodyChord.jpg', 'img/moodyEvery.jpg', 'img/moodyBalance.jpg'];
 
-    // Add the output to the featuredStudent element
     q3.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
 }
 
+// Switch to lightbox when question is correct Q4
 function displayQuestion4() {
-    console.log('featured students')
-
-    // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
+ 
     var featuredStudent = document.getElementById('question4');
 
-    // This is the arrays for featuredStudents. Note that you are to use. Note that it is an array of arrays.
     var featuredStudents = [
         ['Moody Blues'],
         ['John Bonham'  ],
         ['Dave Matthews'],
         ['Alice Cooper']
     ];
-
-    // Use this variable to build the output string that you will then use for the featured student info
+   
     var random = Math.floor(Math.random() * featuredStudents.length);
 
-    // Create a variable named 'randomStudent' and assign it a random number. This number will be used to index into the featuredStudents arr var img = document.getElementById('img');
     var randomStudent = ['img/green21st.jpg', 'img/greenDookie.jpg', 'img/greenIdiot.jpg', 'img/greenNimrod.jpg'];
 
-    // Add the output to the featuredStudent element
     q4.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
 }
 
@@ -104,33 +92,33 @@ function clear(panelID) {
     panel.innerHTML = '';
 }
 // This is a test to fill the question area with the fillQuestion function
-function verse1(){
-    let output =`
+// function verse1(){
+//     let output =`
     
-    <p>She... She screams in silence</p>
-    <p>A sullen riot penetrating through her mind</p>
-    <p>Waiting for a sign</p>
-    <p>To smash the silence with the brick of self-control</p>
-    <br>`
+//     <p>She... She screams in silence</p>
+//     <p>A sullen riot penetrating through her mind</p>
+//     <p>Waiting for a sign</p>
+//     <p>To smash the silence with the brick of self-control</p>
+//     <br>`
     
 
-    return output;
-}
+//     return output;
+// }
 
-function fillQuestion(){
+// function fillQuestion(){
   
-    document.getElementById('q1').innerHTML = verse1();
-}
+//     document.getElementById('q1').innerHTML = verse1();
+// }
 
 
 
 // Start the entire process here
-window.onload = function () {
-    // fillQuestion will actually come after the question is correct, not onload
-    fillQuestion();
-    // displayFeaturedStudentPanel();
-    // start();
-}
+// window.onload = function () {
+//     // fillQuestion will actually come after the question is correct, not onload
+//     fillQuestion();
+//     // displayFeaturedStudentPanel();
+//     // start();
+// }
 
 // Create a new timer using setInterval and assign it to the variable 'quotesTimer'. Have the timer fire off every 15 seconds
 
