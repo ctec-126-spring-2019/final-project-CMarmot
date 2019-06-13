@@ -21,7 +21,7 @@ function displayQuestion1() {
 
     var randomStudent = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
 
-    q1.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+    q1.innerHTML = ">>>>>>>>>>"+"<img class='studentpic' src=" + randomStudent[random] + ">";
 }
 
 // Switch to lightbox when question is correct Q2

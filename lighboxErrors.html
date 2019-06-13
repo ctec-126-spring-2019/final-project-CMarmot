@@ -31,8 +31,9 @@
     <div id="q1" class="question">
 
         <label class="quest" for="chili">Who is the bassist for the Red Hot Chili Peppers?
-            <br>
+        <br><br>
         </label>
+
         <select name="chili" id="chili">
             <option value="lee" id="lee">Geddy Lee</option>
             <option value="flea" id="flea">Flea</option>
@@ -43,13 +44,14 @@
 
         <br><br>
     </div>
-    <!-- First Question -->
+
+    <!-- Second Question -->
     <div id="q2" class="question">
 
         <label class="quest" for="blues">Who was not in the Blues Brothers movie?
-            <br>
-
+        <br><br>
         </label>
+
         <select name="blues" id="blues">
             <option value="cab" id="cab">Cab Calloway</option>
             <option value="aretha" id="aretha">Aretha Franklin</option>
@@ -61,10 +63,11 @@
         <br><br>
     </div>
 
+   <!-- Third Question -->
     <div id="q3" class="question">
 
         <label class="quest" for="moody">What classical group played on the Moody Blues album "Days of Future Passed"?
-            <br><br>
+        <br><br>
         </label>
 
         <select name="moody" id="moody">
@@ -78,11 +81,11 @@
         <br><br>
     </div>
 
+    <!-- Fourth Question -->
     <div id="q4" class="question">
 
         <label class="quest" for="green">What Green Day album was made into an award-winning Broadway show?
-            <br>
-
+        <br><br>
         </label>
 
         <select name="green" id="green">
@@ -143,19 +146,15 @@
                 errors.push(['chili', 'Incorrect']);
             }
             else {
-
+// correct
                 $('#err1').remove();
                 flag = true;
                 $('#chili').css('color', 'purple');
                 // q1.innerHTML = "argh so close";
                 displayQuestion1();
                 function displayQuestion1() {
-
-
-                    // Create a variable named 'featuredStudent' that is a handle to the element with the ID of 'featuredStudentPanel'
+                   
                     var featuredStudent = document.getElementById('question1');
-
-                    // This is the arrays for featuredStudents. Note that you are to use. Note that it is an array of arrays.
                     var featuredStudents = [
                         ['Moody Blues'],
                         ['John Bonham'],
@@ -163,21 +162,16 @@
                         ['Alice Cooper']
                     ];
 
-
                     var random = Math.floor(Math.random() * featuredStudents.length);
 
                     var randomStudent = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
 
                     q1.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+
                 }
+                // turn on lightbox
+             starter1();
             }
-
-            //     <button onclick="changeColor('blue');">blue</button>
-            // function changeColor(newcolor) {
-            // var chiliAlbum = document.getElementById ('q1');
-            // chiliAlbum.style.color = 'blue';}
-
-
 
             // question two error handling
             if ($('#blues').val() !== 'bruce') {
@@ -189,11 +183,9 @@
                 errors.push(['blues', 'Incorrect']);
             } else {
                 $('#err2').remove();
-                $('#blues').css('border', '3px solid black');
+                flag = true;
                 displayQuestion2();
                 function displayQuestion2() {
-
-
 
                     var featuredStudent = document.getElementById('question2');
 
@@ -210,6 +202,7 @@
 
                     q2.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
                 }
+                starter2();
             }
 
             // question three error handling
@@ -224,26 +217,24 @@
                 $('#err3').remove();
                 // Switch to lightbox when question is correct Q3
                 displayQuestion3();
-function displayQuestion3() {
-    
+                function displayQuestion3() {
 
-    var featuredStudent = document.getElementById('question3');
+                    var featuredStudent = document.getElementById('question3');
 
-  
-    var featuredStudents = [
-        ['Moody Blues'],
-        ['John Bonham'  ],
-        ['Dave Matthews'],
-        ['Alice Cooper']
-    ];
-    
-    var random = Math.floor(Math.random() * featuredStudents.length);
+                    var featuredStudents = [
+                        ['Moody Blues'],
+                        ['John Bonham'],
+                        ['Dave Matthews'],
+                        ['Alice Cooper']
+                    ];
 
-    var randomStudent = ['img/moodyDays.jpg', 'img/moodyChord.jpg', 'img/moodyEvery.jpg', 'img/moodyBalance.jpg'];
+                    var random = Math.floor(Math.random() * featuredStudents.length);
 
-    q3.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
-}
+                    var randomStudent = ['img/moodyDays.jpg', 'img/moodyChord.jpg', 'img/moodyEvery.jpg', 'img/moodyBalance.jpg'];
 
+                    q3.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+                }
+                starter3();
             }
             // question four error handling
             if ($('#green').val() !== 'idiot') {
@@ -255,26 +246,27 @@ function displayQuestion3() {
                 errors.push(['green', 'Incorrect']);
             } else {
                 $('#err4').remove();
+                flag = true;
                 displayQuestion4();
                 function displayQuestion4() {
- 
- var featuredStudent = document.getElementById('question4');
 
- var featuredStudents = [
-     ['Moody Blues'],
-     ['John Bonham'  ],
-     ['Dave Matthews'],
-     ['Alice Cooper']
- ];
+                    var featuredStudent = document.getElementById('question4');
 
- var random = Math.floor(Math.random() * featuredStudents.length);
+                    var featuredStudents = [
+                        ['Moody Blues'],
+                        ['John Bonham'],
+                        ['Dave Matthews'],
+                        ['Alice Cooper']
+                    ];
 
- var randomStudent = ['img/green21st.jpg', 'img/greenDookie.jpg', 'img/greenIdiot.jpg', 'img/greenNimrod.jpg'];
+                    var random = Math.floor(Math.random() * featuredStudents.length);
 
- q4.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
-}
+                    var randomStudent = ['img/green21st.jpg', 'img/greenDookie.jpg', 'img/greenIdiot.jpg', 'img/greenNimrod.jpg'];
+
+                    q4.innerHTML = "<button id = starter1<img class='studentpic' src=" + randomStudent[random] + ">";
+                }
+                starter4();
             }
-
 
             // error bucket and form submission prevent
             flag = true;
@@ -293,11 +285,10 @@ function displayQuestion3() {
                 $('#' + errors[0][0]).focus();
             }
 
-
-
-
         });
     });
+
+
     stopper.addEventListener("click", function () {
         stopIntervals(featuredStudentTimer1);
         stopIntervals(featuredStudentTimer2);
@@ -306,22 +297,22 @@ function displayQuestion3() {
     });
 
     // This is the placeholder for the start of the lightbox functionality that will be called when user gets question right
-    starter1.addEventListener("click", function () {
+    function starter1() {
         featuredStudentTimer1 = setInterval(displayQuestion1, 1000);
 
-    });
-    starter2.addEventListener("click", function () {
-        featuredStudentTimer2 = setInterval(displayQuestion1, 1000);
+    };
+    function starter2() {
+        featuredStudentTimer2 = setInterval(displayQuestion2, 1000);
 
-    });
-    starter3.addEventListener("click", function () {
-        featuredStudentTimer3 = setInterval(displayQuestion1, 1000);
+    };
+     function starter3 () {
+        featuredStudentTimer3 = setInterval(displayQuestion3, 1000);
 
-    });
-    starter4.addEventListener("click", function () {
-        featuredStudentTimer4 = setInterval(displayQuestion1, 1000);
+    };
+   function starter4() {
+        featuredStudentTimer4 = setInterval(displayQuestion4, 1000);
 
-    });
+    };
 
 
 
