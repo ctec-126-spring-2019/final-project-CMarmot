@@ -31,26 +31,33 @@
         <div id="question4"></div>
                 
     </div>
-        
+    <form id="data" action="http://ctec.clark.edu/~belgort/formprocessing/processform.php" method="post">
         <div id ="q1" class ="question">
 
             <br><br>
-                <p>Question 1</p>
-                <ul>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
-                </ul>
-                
-        </div>
+                <p>Who is the bassist for the Red Hot Chili Peppers?</p>
+                <select name="one" id="one">
+                        
+                        <option value="lee" id="lee" name ="lee">Geddy Lee</option>
+                        <option value="flea" id="flea" name ="flea">Flea</option>
+                        <opetion value ="entwhistle" id ="entwhistle" name ="entwhistle">John Entwhistle</opetion>
+                        <option value="jones" id="jones" name ="jones">John Paul Jones</option>
+                        <option value="ringo" id="ringo" name ="ringo">Ringo Starr</option>
+                    </select>
+                    
+
+    </div>
+
         <div id ="q2" class ="question">
 
             <br><br>
                 <p>Question 2</p>
                 <ul>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
+                  <li>Cab Calloway</li>
+                  <li>Aretha Franklin</li>
+                  <li>Carrie Fisher</li>
+                  <li>Ray Charles</li>
+                  <li class = "correct">Tommy</li>
                 </ul>
                 
         </div>
@@ -59,10 +66,11 @@
             <br><br>
                 <p>Question 3</p>
                 <ul>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
-                </ul>
+                    <li>The London Symphony Orchestra</li>
+                    <li>The London Chorale</li>
+                    <li>The London Symphony</li>
+                    <li>The London Festival Orchestra</li>
+                    <li>The London Kazoo Symphony</li>
                 
         </div>
         <div id ="q4" class ="question">
@@ -70,12 +78,20 @@
             <br><br>
                 <p>Question 4</p>
                 <ul>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
-                    <li>Here is an answer</li>
+                <li>American Idiot</li>
+                <li>Twenty-first Century Breakdown</li>
+                <li>Dookie</li>
+                <li>Boulevard of Broken Dreams</li>
+                <li>Eyeliner is for Men, Too</li>
                 </ul>
                 
         </div>
+
+        <div class="errors"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 
         <div class="row">
                 <div class="col-lg-12">
