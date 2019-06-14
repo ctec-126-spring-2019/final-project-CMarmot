@@ -12,7 +12,7 @@
 </head>
 
 <h1 class="middle">Game of Groans!!</h1>
-<div class="errors"></div>
+<!-- <div class="errors"></div> -->
 
 <form id="data" action="http://ctec.clark.edu/~belgort/formprocessing/processform.php" method="post">
 
@@ -99,28 +99,20 @@
         <br><br>
     </div>
 
-    <input type="submit" value="Submit">
+   
     <div class="row">
-        <div class="col-lg-12">
-            <footer class="text-center pt-5">
-                <button type="button" id="stopper" class="btn btn-primary text-center pt-5">Stop the madness!</button>
-
+        <div class="col-md-12">
+            <footer class="text-center">
+                    <input type="submit" class="btn btn-primary text-center" value="Submit">
             </footer>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <footer class="text-center pt-5">
-                <button type="button" id="starter1" class="btn btn-primary text-center pt-5">Start the madness!</button>
-
-            </footer>
+        
         </div>
     </div>
 
 
 </form>
 
-<div class="errors"></div>
+<!-- <div class="errors"></div> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -142,8 +134,7 @@
                 $('#chili').after('<span id="err1"> Incorrect </span>');
                 // $('#firstname').focus();
 
-                // pushes error array onto errors
-                errors.push(['chili', 'Incorrect']);
+           
             }
             else {
 // correct
@@ -180,7 +171,7 @@
                 flag = true;
                 $('#blues').after('<span id="err2"> Incorrect</span>');
 
-                errors.push(['blues', 'Incorrect']);
+           
             } else {
                 $('#err2').remove();
                 flag = true;
@@ -243,7 +234,7 @@
                 flag = true;
                 $('#green').after('<span id="err2"> Incorrect</span>');
 
-                errors.push(['green', 'Incorrect']);
+             
             } else {
                 $('#err4').remove();
                 flag = true;
@@ -289,12 +280,12 @@
     });
 
 
-    stopper.addEventListener("click", function () {
-        stopIntervals(featuredStudentTimer1);
-        stopIntervals(featuredStudentTimer2);
-        stopIntervals(featuredStudentTimer3);
-        stopIntervals(featuredStudentTimer4);
-    });
+    // stopper.addEventListener("click", function () {
+    //     stopIntervals(featuredStudentTimer1);
+    //     stopIntervals(featuredStudentTimer2);
+    //     stopIntervals(featuredStudentTimer3);
+    //     stopIntervals(featuredStudentTimer4);
+    // });
 
     // This is the placeholder for the start of the lightbox functionality that will be called when user gets question right
     function starter1() {
