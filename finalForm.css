@@ -4,7 +4,7 @@ body {
 
     color:black;
     border-color:black;
-    margin-left:50px;
+    margin-right:50px;
     
 }
 
@@ -23,12 +23,12 @@ form {
    
     padding: 40px;
     background:  #8f81ca;
-    font-size:1em;
+
 }
 
 .studentpic {
 	text-align: center;
-	font-weight: bold;
+
 	/* margin: 15px 0; */
 }
 
@@ -36,8 +36,8 @@ form {
 
 #featuredStudentPanel img {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 50%;
     padding: 10px 20px 20px 20px;
     max-width:50%;
@@ -49,7 +49,7 @@ form {
 }
 
 .quest {
-    font-size:1.5em;
+
 }
 
 .middle {
