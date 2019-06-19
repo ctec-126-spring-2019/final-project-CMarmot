@@ -11,7 +11,19 @@ body {
 form {
     color: black;
     border-color:black;
+  
+    font-size:1.5em;
+    color:blue;
+    margin-left:auto;
+    text-align:center;
+    background-image: linear-gradient(rgb(0, 162, 255), yellow, green);
 }
+h1 {
+    color:blue;
+    margin-left:auto;
+    text-align:center;
+}
+
 
 .question {
     display:block;
