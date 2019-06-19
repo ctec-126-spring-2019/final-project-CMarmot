@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="lightbox/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="finalForm.css">
+    <link rel="stylesheet" href="final.css">
     <title>Lightbox with Error Checking</title>
 </head>
 
@@ -28,13 +28,14 @@
 
     </div>
     <!-- First Question -->
+
     <div id="q1" class="question">
 
         <label class="quest" for="chili">Who is the bassist for the Red Hot Chili Peppers?
-        <br><br>
         </label>
+        <br>
 
-        <select name="chili" id="chili">
+        <select name="chili" id="chili" class="form-control">
             <option value="lee" id="lee">Geddy Lee</option>
             <option value="flea" id="flea">Flea</option>
             <option value="entwhistle" id="entwhistle">John Entwhistle</option>
@@ -49,10 +50,10 @@
     <div id="q2" class="question">
 
         <label class="quest" for="blues">Who was not in the Blues Brothers movie?
-        <br><br>
         </label>
+        <br>
 
-        <select name="blues" id="blues">
+        <select name="blues" id="blues" class="form-control">
             <option value="cab" id="cab">Cab Calloway</option>
             <option value="aretha" id="aretha">Aretha Franklin</option>
             <option value="carrie" id="carrie">Carrie Fisher</option>
@@ -63,14 +64,14 @@
         <br><br>
     </div>
 
-   <!-- Third Question -->
+    <!-- Third Question -->
     <div id="q3" class="question">
 
         <label class="quest" for="moody">What classical group played on the Moody Blues album "Days of Future Passed"?
-        <br><br>
         </label>
+        <br>
 
-        <select name="moody" id="moody">
+        <select name="moody" id="moody" class="form-control">
             <option value="chorale" id="chorale">The London Chorale</option>
             <option value="orchestra" id="orchestra">The London Symphony Orchestra</option>
             <option value="symphony" id="symphony">The London Symphony</option>
@@ -85,13 +86,13 @@
     <div id="q4" class="question">
 
         <label class="quest" for="green">What Green Day album was made into an award-winning Broadway show?
-        <br><br>
         </label>
+        <br>
 
-        <select name="green" id="green">
-            <option value="idiot" id="idiot">American Idiot</option>
+        <select name="green" id="green" class="form-control">
+            <option value="greenDookie" id="dookie">Dookie</option>
             <option value="century" id="century">21st Century Breakdown</option>
-            <option value="dookie" id="dookie">Dookie</option>
+            <option value="idiot" id="idiot">American Idiot</option>
             <option value="dreams" id="dreams">Boulevard of Broken Dreams</option>
             <option value="men" id="men">Eyeliner is for Men</option>
         </select>
@@ -99,13 +100,13 @@
         <br><br>
     </div>
 
-   
+
     <div class="row">
         <div class="col-md-12">
             <footer class="text-center">
-                    <input type="submit" class="btn btn-primary text-center" value="Submit">
+                <input type="submit" class="btn btn-primary text-center" value="Submit">
             </footer>
-        
+
         </div>
     </div>
 
@@ -117,6 +118,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
+
+    var one = false;
+    var two = false;
+    var three = false;
+    var four = false;
     // checks for document fully loaded
     $(document).ready(function () {
         // binds submit button to this event
@@ -131,37 +137,30 @@
                 $('#chili').css('border', '3px solid red');
                 $('#err1').remove();
                 flag = true;
-                $('#chili').after('<span id="err1"> Incorrect </span>');
+                $('#chili').after('<span id="err1"> Nope! </span>');
                 // $('#firstname').focus();
 
-           
+
             }
             else {
-// correct
+                // correct
                 $('#err1').remove();
                 flag = true;
                 $('#chili').css('color', 'purple');
                 // q1.innerHTML = "argh so close";
                 displayQuestion1();
                 function displayQuestion1() {
-                   
-                    var featuredStudent = document.getElementById('question1');
-                    var featuredStudents = [
-                        ['Moody Blues'],
-                        ['John Bonham'],
-                        ['Dave Matthews'],
-                        ['Alice Cooper']
-                    ];
 
-                    var random = Math.floor(Math.random() * featuredStudents.length);
+                    var random = Math.floor(Math.random() * 4);
 
-                    var randomStudent = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
+                    var randomAlbum = ['img/redCalif.jpg', 'img/redGetaway.jpg', 'img/redLive.jpg', 'img/redStadium.jpg'];
 
-                    q1.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+                    q1.innerHTML = "<img src=" + randomAlbum[random] + ">";
 
                 }
                 // turn on lightbox
-             starter1();
+                starter1();
+                one = true;
             }
 
             // question two error handling
@@ -169,31 +168,24 @@
                 $('#blues').css('border', '3px solid red');
                 $('#err2').remove();
                 flag = true;
-                $('#blues').after('<span id="err2"> Incorrect</span>');
+                $('#blues').after('<span id="err2"> Incorrectamundo </span>');
 
-           
+
             } else {
                 $('#err2').remove();
                 flag = true;
                 displayQuestion2();
                 function displayQuestion2() {
 
-                    var featuredStudent = document.getElementById('question2');
+                    var random = Math.floor(Math.random() * 4);
 
-                    var featuredStudents = [
-                        ['Moody Blues'],
-                        ['John Bonham'],
-                        ['Dave Matthews'],
-                        ['Alice Cooper']
-                    ];
+                    var randomAlbum = ['img/bluesAmerica.jpg', 'img/bluesDefinitive.jpg', 'img/bluesSoul.jpg', 'img/bluesSoundtrack.jpg'];
 
-                    var random = Math.floor(Math.random() * featuredStudents.length);
-
-                    var randomStudent = ['img/bluesAmerica.jpg', 'img/bluesDefinitive.jpg', 'img/bluesSoul.jpg', 'img/bluesSoundtrack.jpg'];
-
-                    q2.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+                    q2.innerHTML = "<img src=" + randomAlbum[random] + ">";
                 }
+                // turn on lightbox
                 starter2();
+                two = true;
             }
 
             // question three error handling
@@ -201,62 +193,78 @@
                 $('#moody').css('border', '3px solid red');
                 $('#err3').remove();
                 flag = true;
-                $('#moody').after('<span id="err2"> Incorrect</span>');
+                $('#moody').after('<span id="err2"> Seriously? </span>');
 
-                errors.push(['moody', 'Incorrect']);
             } else {
                 $('#err3').remove();
                 // Switch to lightbox when question is correct Q3
                 displayQuestion3();
                 function displayQuestion3() {
 
-                    var featuredStudent = document.getElementById('question3');
+                    var random = Math.floor(Math.random() * 4);
 
-                    var featuredStudents = [
-                        ['Moody Blues'],
-                        ['John Bonham'],
-                        ['Dave Matthews'],
-                        ['Alice Cooper']
-                    ];
+                    var randomAlbum = ['img/moodyDays.jpg', 'img/moodyChord.jpg', 'img/moodyEvery.jpg', 'img/moodyBalance.jpg'];
 
-                    var random = Math.floor(Math.random() * featuredStudents.length);
-
-                    var randomStudent = ['img/moodyDays.jpg', 'img/moodyChord.jpg', 'img/moodyEvery.jpg', 'img/moodyBalance.jpg'];
-
-                    q3.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+                    q3.innerHTML = "<img src=" + randomAlbum[random] + ">";
                 }
+                // turn on lightbox
                 starter3();
+                three = true;
             }
             // question four error handling
             if ($('#green').val() !== 'idiot') {
                 $('#green').css('border', '3px solid red');
                 $('#err4').remove();
                 flag = true;
-                $('#green').after('<span id="err2"> Incorrect</span>');
+                $('#green').after('<span id="err2"> That is sad </span>');
 
-             
+
             } else {
                 $('#err4').remove();
                 flag = true;
+                // Switch to lightbox when question is correct Q4
                 displayQuestion4();
                 function displayQuestion4() {
 
-                    var featuredStudent = document.getElementById('question4');
+                    var random = Math.floor(Math.random() * 4);
 
-                    var featuredStudents = [
-                        ['Moody Blues'],
-                        ['John Bonham'],
-                        ['Dave Matthews'],
-                        ['Alice Cooper']
-                    ];
+                    var randomAlbum = ['img/green21st.jpg', 'img/greenDookie.jpg', 'img/greenIdiot.jpg', 'img/greenNimrod.jpg'];
 
-                    var random = Math.floor(Math.random() * featuredStudents.length);
-
-                    var randomStudent = ['img/green21st.jpg', 'img/greenDookie.jpg', 'img/greenIdiot.jpg', 'img/greenNimrod.jpg'];
-
-                    q4.innerHTML = "<img class='studentpic' src=" + randomStudent[random] + ">";
+                    q4.innerHTML = "<img src=" + randomAlbum[random] + ">";
                 }
+                // turn on lightbox
                 starter4();
+                four = true;
+            }
+// do winner if all are correct
+            if (one == true && two == true && three == true && four == true) {
+                var winner;
+
+                function myFunction() {
+                    winner = setTimeout(displayWinner, 10000);
+                  
+                    myfunction();
+                    console.log(timeout)}
+                
+
+                function displayWinner() {
+                    stopper1();
+                    stopper2();
+                    stopper3();
+                    stopper4();
+                    q1.innerHTML = "<img src=" + 'img/bruce1.jpg' + ">";
+
+                    q2.innerHTML = "<img src=" + 'img/bruce2.jpg' + ">";
+
+                    q3.innerHTML = "<img src=" + 'img/bruce3.jpg' + ">";
+
+                    q4.innerHTML = "<img src=" + 'img/bruce4.jpg' + ">";
+
+                }
+                displayWinner();
+                console.log(true);
+
+                      //   
             }
 
             // error bucket and form submission prevent
@@ -273,19 +281,15 @@
                 // stops form from being submitted
                 evt.preventDefault();
                 // puts the currsor in first unfilled input
-                $('#' + errors[0][0]).focus();
+                // $('#' + errors[0][0]).focus();
             }
 
         });
     });
 
+ 
 
-    // stopper.addEventListener("click", function () {
-    //     stopIntervals(featuredStudentTimer1);
-    //     stopIntervals(featuredStudentTimer2);
-    //     stopIntervals(featuredStudentTimer3);
-    //     stopIntervals(featuredStudentTimer4);
-    // });
+
 
     // This is the placeholder for the start of the lightbox functionality that will be called when user gets question right
     function starter1() {
@@ -296,12 +300,30 @@
         featuredStudentTimer2 = setInterval(displayQuestion2, 1000);
 
     };
-     function starter3 () {
+    function starter3() {
         featuredStudentTimer3 = setInterval(displayQuestion3, 1000);
 
     };
-   function starter4() {
+    function starter4() {
         featuredStudentTimer4 = setInterval(displayQuestion4, 1000);
+
+    };
+    // stop lightboxes when all are correct
+
+    function stopper1() {
+        featuredStudentTimer1 = clearInterval(featuredStudentTimer1);
+
+    };
+    function stopper2() {
+        featuredStudentTimer2 = clearInterval(featuredStudentTimer2);
+
+    };
+    function stopper3() {
+        featuredStudentTimer3 = clearInterval(featuredStudentTimer3);
+
+    };
+    function stopper4() {
+        featuredStudentTimer4 = clearInterval(featuredStudentTimer4);
 
     };
 
